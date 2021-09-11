@@ -22,5 +22,12 @@ html {
   @include breakpoint($x-large) {
     font-size: 18px; // change to whatever
   }
+
+  .initial-content{
+    margin: 5rem;
+  }
+}
+.initial-content{
+  margin: 5rem;
 }
 
