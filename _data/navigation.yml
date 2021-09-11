@@ -1,15 +1,17 @@
 # main links
 main:
-  - title: "동훈이의 Github"
-    url: https://github.com/ShinDongHun1/
-  - title: "Categories"
-    url: /categories/
-  - title: "Blog"
+  - title: "Github-Blog"
     url: /categories/blog/
   - title: "Java & Spring"
     url: /categories/javaSpring/
+  - title: "Algorithm"
+    url: /categories/algorithm/
+  - title: "Categories"
+    url: /categories/
   - title: "Tags"
     url: /tags/
+  - title: "동훈이의 Github"
+    url: https://github.com/ShinDongHun1/
   # - title: "Study"
   #   url: /collection-archive/
   # - title: ""
