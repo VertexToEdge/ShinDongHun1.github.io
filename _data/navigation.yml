@@ -7,7 +7,7 @@ main:
   - title: "Blog"
     url: /categories/blog/
   - title: "Java & Spring"
-    url: /JavaSpring/
+    url: /categories/javaSpring/
   - title: "Tags"
     url: /tags/
   # - title: "Study"

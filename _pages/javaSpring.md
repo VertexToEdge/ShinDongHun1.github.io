@@ -1,6 +1,6 @@
 ---
 title: "자바 & 스프링"
-permalink: /javaSpring/
+permalink: /categories/javaSpring/
 layout: category
 author_profile: true
 toc_sticky: true
