@@ -10,7 +10,7 @@
 
 html {
   font-size: 12px;
-  margin: 8rem;
+  margin: 4rem;
   @include breakpoint($medium) {
     font-size: 14px;
     margin: 4rem;
