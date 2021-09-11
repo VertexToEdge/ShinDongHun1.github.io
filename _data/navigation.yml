@@ -2,11 +2,15 @@
 main:
   - title: "동훈이의 Github"
     url: https://github.com/ShinDongHun1/
-  # - title: "About"
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
-  # - title: "Sample Collections"
+  - title: "Categories"
+    url: /categories/
+  - title: "Blog"
+    url: /categories/blog/
+  - title: "Java & Spring"
+    url: /JavaSpring/
+  - title: "Tags"
+    url: /tags/
+  # - title: "Study"
   #   url: /collection-archive/
-  # - title: "Sitemap"
+  # - title: ""
   #   url: /sitemap/
