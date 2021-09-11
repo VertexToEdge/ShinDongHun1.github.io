@@ -9,18 +9,18 @@
 
 
 html {
-  font-size: 14px; // change to whatever
+  font-size: 14px;
 
   @include breakpoint($medium) {
-    font-size: 14px; // change to whatever
+    font-size: 16px;
   }
 
   @include breakpoint($large) {
-    font-size: 16px; // change to whatever
+    font-size: 18px;
   }
 
   @include breakpoint($x-large) {
-    font-size: 18px; // change to whatever
+    font-size: 20px;
   }
 
 
