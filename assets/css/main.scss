@@ -11,26 +11,27 @@
 html {
   font-size: 12px;
   .initial-content {
-    margin: 4rem;
+    margin: 2rem;
+
   }
   @include breakpoint($medium) {
     font-size: 14px;
     .initial-content {
-      margin: 6rem;
+      margin: 4rem;
     }
   }
 
   @include breakpoint($large) {
     font-size: 16px;
     .initial-content {
-      margin: 8rem;
+      margin: 6rem;
     }
   }
 
   @include breakpoint($x-large) {
     font-size: 18px;
     .initial-content {
-      margin: 8rem;
+      margin: 6rem;
     }
   }
 
