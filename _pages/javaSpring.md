@@ -4,6 +4,7 @@ permalink: /categories/javaSpring/
 layout: category
 author_profile: true
 taxonomy: javaSpring
+sidebar_main: true
 ---
 
 
