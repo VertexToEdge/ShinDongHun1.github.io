@@ -14,9 +14,7 @@ html {
     margin: 2rem;
 
   }
-  blockquote{
-    font-size: 14px;
-  }
+
   @include breakpoint($medium) {
     font-size: 14px;
     .initial-content {
@@ -38,7 +36,7 @@ html {
     }
 
   blockquote{
-    font-size: 14px;
+    font-size: 15px;
   }
 
   }
