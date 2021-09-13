@@ -29,11 +29,17 @@ html {
   }
 
   @include breakpoint($x-large) {
-    font-size: 18px;
+    font-size: 17px;
     .initial-content {
       margin: 6rem;
     }
+
+  blockquote{
+    font-size: 14px;
   }
+
+  }
+
 
 
 
