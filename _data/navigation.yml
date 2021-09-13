@@ -6,13 +6,13 @@ main:
     url: /categories/javaSpring/
   - title: "Algorithm"
     url: /categories/algorithm/
+  - title: "백준"
+    url: /categories/baekjun/
   - title: "Categories"
     url: /categories/
   - title: "Tags"
     url: /tags/
   - title: "동훈이의 Github"
     url: https://github.com/ShinDongHun1/
-  # - title: "Study"
-  #   url: /collection-archive/
   # - title: ""
   #   url: /sitemap/
