@@ -14,11 +14,11 @@ html {
     margin: 2rem;
 
   }
-  .nav__items span{
+  html .nav__items li {
     font-size: 1.25em;
   }
-  .nav__items li{
-    font-size: 1em;
+  span.nav__sub-title {
+    font-size: 1.1em;
   }
 
   @include breakpoint($medium) {
