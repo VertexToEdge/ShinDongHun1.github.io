@@ -15,16 +15,11 @@ html {
 
   }
   .total_post_count {
-    font-size: 1.15em;
-  }
-  html .nav__items span {
     font-size: 1em;
   }
-  html .nav__items li {
-    font-size: 1em;
-  }
+
   span.nav__sub-title {
-    font-size: 0.95em;
+    font-size: 1em;
   }
 
   @include breakpoint($medium) {
