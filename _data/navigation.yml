@@ -1,5 +1,7 @@
 # main links
 main:
+  - title: "일기"
+    url: /categories/diary/
   - title: "Github-Blog"
     url: /categories/blog/
   - title: "Java & Spring"
@@ -8,8 +10,8 @@ main:
     url: /categories/algorithm/
   - title: "백준"
     url: /categories/baekjun/
-  - title: "일기"
-    url: /categories/diary/
+  - title: "Error"
+    url: /categories/error/
   - title: "Categories"
     url: /categories/
   - title: "Tags"
