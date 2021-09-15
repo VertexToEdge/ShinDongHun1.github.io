@@ -8,6 +8,8 @@ main:
     url: /categories/algorithm/
   - title: "백준"
     url: /categories/baekjun/
+   - title: "일기"
+     url: /categories/diary/
   - title: "Categories"
     url: /categories/
   - title: "Tags"

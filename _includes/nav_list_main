@@ -24,7 +24,7 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-            
+
             <span class="nav__sub-title">Algorithm</span>
             <ul>
                 {% for category in site.categories %}
