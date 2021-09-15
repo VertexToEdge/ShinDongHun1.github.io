@@ -1,6 +1,6 @@
 # main links
 main:
-  - title: "일기"
+  - title: "Diary"
     url: /categories/diary/
   - title: "Github-Blog"
     url: /categories/blog/
