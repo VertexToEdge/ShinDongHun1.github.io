@@ -13,18 +13,6 @@ layout: archive
 {% endif %}
 
 
-
-{% for post in posts %}
-{% include archive-single.html %}
-{% endfor %}
-
-{% include paginator.html %}
-
-
-
-
-<!-- 뭐가 달라질까
-
 {% assign entries_layout = page.entries_layout | default: 'list' %}
 <div class="entries-{{ entries_layout }}">
   {% for post in posts %}
@@ -33,4 +21,3 @@ layout: archive
 </div>
 
 {% include paginator.html %}
--->
