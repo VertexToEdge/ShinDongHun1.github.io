@@ -9,5 +9,5 @@ sidebar_main: true
 
 ✏ 스프링 끄적끄적 :D
 
-{% assign posts = site.categories.diary%}
+{% assign posts = site.categories.javaSpring%}
 {% for post in posts %} {% include archive-single.html type=page.entries_layout %} {% endfor %}
