@@ -22,11 +22,13 @@
 
 html {
   font-family: 'Cafe24Dongdong';
-  font-size: 12px;
   .initial-content {
     margin: 2rem;
     font-size: 1.15em;
 
+  }
+  .page__content p, .page__content li, .page__content dl{
+    font-size: 1.15em; //글 내용!
   }
   .body{
     font-family: 'Cafe24Dongdong';
