@@ -43,21 +43,18 @@ html {
   }
 
   @include breakpoint($medium) {
-    font-size: 14px;
     .initial-content {
       margin: 4rem;
     }
   }
 
   @include breakpoint($large) {
-    font-size: 16px;
     .initial-content {
       margin: 6rem;
     }
   }
 
   @include breakpoint($x-large) {
-    font-size: 17px;
     .initial-content {
       margin: 6rem;
     }
