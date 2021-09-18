@@ -1,11 +1,13 @@
 ---
 title: "Error"
 permalink: /categories/error/
-layout: category
+layout: archive
 author_profile: true
 sidebar_main: true
 taxonomy: error
-
 ---
 
-이것저것 공부하고 만지며 생긴 참 치같은 오류들 모음 :D
+오류 모음집 : (
+
+{% assign posts = site.categories.error%}
+{% for post in posts %} {% include archive-single.html type=page.entries_layout %} {% endfor %}
