@@ -53,7 +53,7 @@
             <ul>
                {% for category in site.categories %}
                   {% if category[0] == "error" %}
-                       <li><a href="/categories/diary" class="">오류들..({{category[1].size}})</a></li>
+                       <li><a href="/categories/error" class="">오류들..({{category[1].size}})</a></li>
                   {% endif %}
                {% endfor %}
            </ul>
