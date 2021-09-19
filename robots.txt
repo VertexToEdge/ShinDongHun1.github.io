@@ -1,14 +1,4 @@
----
-# The robots rules
-# v2.0
-# © 2017-2019 Cotes Chung
-# MIT License
-layout: null
-permalink: robots.txt
----
-
 User-agent: *
-
 Allow: /
 
-Sitemap: {{ site.url | append: site.baseurl }}/sitemap.xml
+Sitemap: https://shindonghun1.github.io//sitemap.xml
