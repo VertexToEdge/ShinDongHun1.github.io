@@ -23,7 +23,7 @@ name                     : "짱 멋진 동훈이"
 description              : "짱 멋진 동훈이의 기록들..."
 url                      : "https://shindonghun1.github.io/" #the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : #"ShinDongHun1/shindonghun1.github.io/"# the subpath of your site, e.g. "/blog"
-repository               : "shindonghun1/shindonghun1.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : "shindonghun1.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : #"/assets/images/bio-photo-sdh.jpg" # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
@@ -284,7 +284,7 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: # true
+      comments: true
       share: true
       related: true
       sidebar_main: true
@@ -297,7 +297,7 @@ defaults:
       layout: single
       author_profile: true
       read_time: false
-      comments: false
+      comments: true
       share: true
       related: false
       sidebar_main: true
