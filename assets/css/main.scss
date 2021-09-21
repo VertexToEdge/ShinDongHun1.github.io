@@ -24,6 +24,9 @@ html {
   font-family: 'Cafe24Dongdong';
   font-size: 14px;
 
+  .masthead__inner-wrap {//상단 카테고리
+    font-size: 0.95em;
+  }
   html .page__content p, html .page__content li, html .page__content dl {
     font-size: 1em;
   }
