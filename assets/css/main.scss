@@ -23,10 +23,7 @@
 html {
   font-family: 'Cafe24Dongdong';
   font-size: 14px;
-  .initial-content {
-    margin: 2rem;
 
-  }
   html .page__content p, html .page__content li, html .page__content dl {
     font-size: 1em;
   }
@@ -46,26 +43,20 @@ html {
 
   @include breakpoint($medium) {
     font-size: 15px;
-    .initial-content {
-      margin: 4rem;
-    }
+
   }
 
   @include breakpoint($large) {
     font-size: 18px;
-    .initial-content {
-      margin: 6rem;
-    }
+
   }
 
   @include breakpoint($x-large) {
     font-size: 20px;
-    .initial-content {
-      margin: 6rem;
-    }
+
 
     blockquote{
-      font-size: 17px;
+      font-size: 20px;
     }
 
   }
