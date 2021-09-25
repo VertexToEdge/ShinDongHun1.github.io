@@ -10,6 +10,8 @@ main:
     url: /categories/algorithm/
   - title: "백준"
     url: /categories/baekjun/
+  - title: "Project"
+    url: /categories/project/
   - title: "Error"
     url: /categories/error/
   - title: "Book"
