@@ -8,6 +8,8 @@ main:
     url: /categories/javaSpring/
   - title: "Algorithm"
     url: /categories/algorithm/
+  - title: "데이터베이스"
+    url: /categories/db/
   - title: "백준"
     url: /categories/baekjun/
   - title: "Project"
