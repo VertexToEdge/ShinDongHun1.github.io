@@ -20,15 +20,21 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Cafe24Oneprettynight';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 html {
-  font-family: 'Cafe24Dongdong';
-  font-size: 14px;
+  font-family: 'Cafe24Oneprettynight';
+  font-size: 15px;
 
   .masthead__inner-wrap {//상단 카테고리
     font-size: 0.95em;
   }
   html .page__content p, html .page__content li, html .page__content dl {
-    font-size: 1em;
+    font-size: 1.05em;
   }
   .body{
     font-family: 'Cafe24Dongdong';
@@ -41,25 +47,25 @@ html {
   //}
 
   span.nav__sub-title {
-    font-size: 1em;
+    font-size: 1.2em;
   }
 
   @include breakpoint($medium) {
-    font-size: 15px;
+    font-size: 16px;
 
   }
 
   @include breakpoint($large) {
-    font-size: 18px;
+    font-size: 19px;
 
   }
 
   @include breakpoint($x-large) {
-    font-size: 20px;
+    font-size: 21px;
 
 
     blockquote{
-      font-size: 20px;
+      font-size: 21px;
     }
 
   }
