@@ -15,7 +15,7 @@
                      <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시-->
                         {% for category in site.categories %}
                            {% if category[0] == "javaSpring" %}
-                               <li><a href="/categories/cpp" class="">java & Spring({{category[1].size}})</a></li>
+                               <li><a href="/categories/javaSpring" class="">java & Spring({{category[1].size}})</a></li>
                            {% endif %}
                         {% endfor %}
                     </ul>
@@ -31,7 +31,7 @@
                     <ul>
                        {% for category in site.categories %}
                            {% if category[0] == "QueryDSL" %}
-                               <li><a href="/categories/cpp" class="">QueryDSL({{category[1].size}})</a></li>
+                               <li><a href="/categories/QueryDSL" class="">QueryDSL({{category[1].size}})</a></li>
                             {% endif %}
                        {% endfor %}
                    </ul>
@@ -39,7 +39,7 @@
                     <ul>
                        {% for category in site.categories %}
                            {% if category[0] == "MVC" %}
-                              <li><a href="/categories/cpp" class="">Spring Web MVC({{category[1].size}})</a></li>
+                              <li><a href="/categories/MVC" class="">Spring Web MVC({{category[1].size}})</a></li>
                            {% endif %}
                        {% endfor %}
                    </ul>
@@ -63,7 +63,7 @@
                   <ul>
                       {% for category in site.categories %}
                            {% if category[0] == "RBD" %}
-                               <li><a href="/categories/stl" class="">RDB 실전 입문({{category[1].size}})</a></li>
+                               <li><a href="/categories/RDB" class="">RDB 실전 입문({{category[1].size}})</a></li>
                            {% endif %}
                       {% endfor %}
                  </ul>
@@ -107,7 +107,7 @@
             <ul>
                {% for category in site.categories %}
                   {% if category[0] == "CNUTime" %}
-                       <li><a href="/categories/error" class="">CNU-TIME({{category[1].size}})</a></li>
+                       <li><a href="/categories/CNUTime" class="">CNU-TIME({{category[1].size}})</a></li>
                   {% endif %}
                {% endfor %}
            </ul>
@@ -115,7 +115,7 @@
            <ul>
               {% for category in site.categories %}
                 {% if category[0] == "LIZOT" %}
-                    <li><a href="/categories/error" class="">LIZOT({{category[1].size}})</a></li>
+                    <li><a href="/categories/LIZOT" class="">LIZOT({{category[1].size}})</a></li>
                 {% endif %}
              {% endfor %}
           </ul>
@@ -126,7 +126,7 @@
                        <ul>
                           {% for category in site.categories %}
                              {% if category[0] == "Volunteer" %}
-                                  <li><a href="/categories/error" class="">Volunteer({{category[1].size}})</a></li>
+                                  <li><a href="/categories/Volunteer" class="">Volunteer({{category[1].size}})</a></li>
                              {% endif %}
                           {% endfor %}
                       </ul>
@@ -156,7 +156,7 @@
              <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "EssenceJAVA" %}
-                         <li><a href="/categories/blog" class="">자바의 정석({{category[1].size}})</a></li>
+                         <li><a href="/categories/EssenceJAVA" class="">자바의 정석({{category[1].size}})</a></li>
                     {% endif %}
                {% endfor %}
               </ul>
@@ -164,7 +164,7 @@
               <ul>
                  {% for category in site.categories %}
                     {% if category[0] == "Object" %}
-                       <li><a href="/categories/blog" class="">오브젝트({{category[1].size}})</a></li>
+                       <li><a href="/categories/Object" class="">오브젝트({{category[1].size}})</a></li>
                    {% endif %}
                  {% endfor %}
              </ul>
@@ -172,7 +172,7 @@
               <ul>
                  {% for category in site.categories %}
                     {% if category[0] == "CleanCode" %}
-                       <li><a href="/categories/blog" class="">Clean Code({{category[1].size}})</a></li>
+                       <li><a href="/categories/CleanCode" class="">Clean Code({{category[1].size}})</a></li>
                    {% endif %}
                  {% endfor %}
              </ul>
@@ -180,7 +180,7 @@
               <ul>
                  {% for category in site.categories %}
                     {% if category[0] == "objectOriented" %}
-                       <li><a href="/categories/blog" class="">객체지향의 사실과 오해({{category[1].size}})</a></li>
+                       <li><a href="/categories/objectOriented" class="">객체지향의 사실과 오해({{category[1].size}})</a></li>
                    {% endif %}
                  {% endfor %}
              </ul>
