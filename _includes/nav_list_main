@@ -61,6 +61,15 @@
                   </ul>
 
                   <ul>
+                      {% for category in site.setting %}
+                           {% if category[0] == "rdb" %}
+                               <li><a href="/categories/setting" class="">Setting({{category[1].size}})</a></li>
+                           {% endif %}
+                      {% endfor %}
+                 </ul>
+
+
+                  <ul>
                       {% for category in site.categories %}
                            {% if category[0] == "rdb" %}
                                <li><a href="/categories/rdb" class="">RDB 실전 입문({{category[1].size}})</a></li>
