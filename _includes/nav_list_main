@@ -62,7 +62,7 @@
 
                   <ul>
                       {% for category in site.setting %}
-                           {% if category[0] == "rdb" %}
+                           {% if category[0] == "setting" %}
                                <li><a href="/categories/setting" class="">Setting({{category[1].size}})</a></li>
                            {% endif %}
                       {% endfor %}
