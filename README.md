@@ -1,9 +1,6 @@
-# Tech Blog 🍃
+<h1 align="center"> Tech Blog 🍃 <h1>
 
-<h3 align="center">
-	Categories
-</h3>
-<h2></h2>
+
 <h4 align="center">
 💻 BACK-END<br><br>
 🧮 ALGORITHM<br><br>
