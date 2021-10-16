@@ -1,4 +1,4 @@
-<h1 align="center"> Tech Blog 🍃 <h1>
+<h2 align="center"> Tech Blog 🍃 <h2>
 
 <h4 align="center">
 💻 BACK-END<br><br>
