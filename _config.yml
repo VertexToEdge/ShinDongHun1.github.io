@@ -293,7 +293,7 @@ defaults:
       comments: true
       share: true
       related: true
-      sidebar_main: fasle
+      sidebar_main: true
 
   # _pages
   - scope:
@@ -306,4 +306,4 @@ defaults:
       comments: true
       share: true
       related: false
-      sidebar_main: false
+      sidebar_main: true
