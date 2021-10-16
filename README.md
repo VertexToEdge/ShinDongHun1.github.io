@@ -1,5 +1,5 @@
 <h2 align="center"> Tech Blog 🍃 <h2>
-<h4 align="center">
+<h2 align="center">
 💻 BACK-END<br><br>
 🧮 ALGORITHM<br><br>
 ⛔ ERROR<br><br>
