@@ -1,4 +1,4 @@
-# <p align="center">Tech Blog 🍃 </p>
+# Tech Blog 🍃 
 <br>
 
 <h3>
