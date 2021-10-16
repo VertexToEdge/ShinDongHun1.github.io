@@ -1,9 +1,5 @@
 # Tech Blog 🍃
 
-<br>
-
-<br>
-
 <h3 align="center">
 	Categories
 </h3>
