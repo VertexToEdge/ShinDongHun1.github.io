@@ -1,6 +1,6 @@
 # <p align="center">Tech Blog 🍃 </p>
 <br>
-<h3 align="center">📝 Categories</h3>
+<h2 align="center">📝 Categories</h2>
        <br><br>
 <h4 align="center">
 💻 BACK-END<br><br>
