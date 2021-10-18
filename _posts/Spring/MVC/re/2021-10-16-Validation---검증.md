@@ -1,7 +1,7 @@
 ---
-title:  "스프링 MVC 공부하기[10]"
-excerpt: "Validation"
-date:   2021-10-16 15:50:00
+title:  "Validation - 검증"
+excerpt: "스프링 MVC 공부하기[17]"
+date:   2021-10-16 16:43:00
 header:
   teaser: /assets/images/spring.png
 
@@ -10,20 +10,15 @@ tags:
   - Java
   - Spring
   - MVC
-last_modified_at: 2021-10-16T15:50:00
+last_modified_at: 2021-10-16T16:43:00
+
 
 
 ---
 
 <br/>
 
-[스프링 MVC 2편](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-2/dashboard)를 보고 공부하고 정리한 내용을 올립니다
-
-<br/>
-
 ## 💡 검증
-
-시작하기에 앞서, 서버에서 굳이 검증을 할 필요가 있을까에 대해서 생각해보자. 
 
 <br/>
 
@@ -326,4 +321,12 @@ Interger 에 "q" 같이 문자열을 넣는 상황에는 해당 오류가 발생
 
 <script src="https://gist.github.com/ShinDongHun1/edbaf2c59ee49f0396a94329cb630983.js"></script>
 
-실제 개발할 때는 이 객체들을 그대로 사용하지 말고, 필요한 데이터만 뽑아서, 별도의 API스펙을 정의하고 그에 맞는 객체로 만들어서 반환해야 한다
+##### 실제 개발할 때는 이 객체들을 그대로 사용하지 말고, 필요한 데이터만 뽑아서, 별도의 API스펙을 정의하고 그에 맞는 객체로 만들어서 반환해야 한다
+
+<br/>
+
+<br/>
+
+#### 🔎 자료 - [스프링 MVC 2편](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-2/dashboard)
+
+<br/>

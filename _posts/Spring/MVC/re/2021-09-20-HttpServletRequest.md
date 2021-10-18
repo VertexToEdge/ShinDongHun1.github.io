@@ -1,7 +1,7 @@
 ---
-title:  "스프링 MVC 공부하기[2]"
-excerpt: "HttpServletRequest"
-date:   2021-09-20 06:18:00 +0900
+title:  "HttpServletRequest"
+excerpt: "스프링 MVC 공부하기[3]"
+date:   2021-09-20 06:18:00
 header:
   teaser: /assets/images/spring.png
 
@@ -11,30 +11,25 @@ tags:
   - Spring
   - MVC
 last_modified_at: 2021-10-12T06:18:00-05:00
-
 ---
-
-<br/>
-
-[스프링 MVC 1편](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1/dashboard)를 보고 공부하고 정리한 내용을 올립니다
-
-#### (10월12일 수정)
 
 <br/>
 
 ## 💡 HttpServletRequest 역할
 
-서블릿은 개발자가 HTTP 요청 메세지를 편리하게 사용할 수 있도록 개발자 대신에 <span style="color:orange">**HTTP 요청 메시지를 파싱**</span> 
+##### 서블릿은 개발자가 HTTP 요청 메세지를 편리하게 사용할 수 있도록 개발자 대신에 <span style="color:orange">**HTTP 요청 메시지를 파싱**</span> 
 
-결과를 **<span style="color:orange">HttpServletRequest</span>** 객체에 담아서 제공
+##### 결과를 **<span style="color:orange">HttpServletRequest</span>** 객체에 담아서 제공
 
 <br/>
 
-> POST /save HTTP/1.1      //START LINE<br/>Host: localhost:8080       //HEADER<br/>Content-Type: application/x-www-form-urlencoded      //HEADER
+#### 🔎 HTTP 요청 메세지 정보
+
+> ##### POST /save HTTP/1.1      //START LINE<br/>Host: localhost:8080       //HEADER<br/>Content-Type: application/x-www-form-urlencoded      //HEADER
 >
 > 
 >
-> username=kim&age=20      //BODY
+> ##### username=kim&age=20      //BODY
 
 - **START LINE**
   - **HTTP 메소드 (GET, POST)**
@@ -42,23 +37,23 @@ last_modified_at: 2021-10-12T06:18:00-05:00
   - **쿼리 스트링**
   - **스키마, 프로토콜**
 - **헤더**
-  - **헤더 조회**
 - **바디**
-  - **form 파라미터 형식 조회**
-  - **message body 데이터 직접 조회**
 
-##### 추가로 부가 기능도 함께 제공
+##### 위 요청 메세지 정보들을 조회할 수 있다.
 
 <br/>
 
-### 💡 임시 저장소 기능
+### 🌌 HttpServletRequest가 제공하는 추가 기능
+
+#### 💡 임시 저장소 기능
 
 ##### 해당 HTTP 요청이 시작부터 끝날 때 까지 유지되는 임시 저장소 기능
 
 - ##### 저장: request.setAttribute(name, value)
+
 - ##### 조회: request.getAttribute(name)
 
-### 💡 세션 관리 기능
+#### 💡 세션 관리 기능
 
 - ##### request.getSession(true) 
 
@@ -72,9 +67,9 @@ last_modified_at: 2021-10-12T06:18:00-05:00
 
 ## 💡 HTTP 요청 데이터
 
-##### HTTP 요청 데이터를 통해서 클라이언트가 서버에게 메세지를 전달하는 방법
+#### 🌌 HTTP 요청 데이터를 통해서 클라이언트가 서버에게 메세지를 전달하는 방법
 
-#### ✏️GET - 쿼리 파라미터
+#### 1. GET - 쿼리 파라미터
 
 - ##### /url?username=shindonghun&age=22
 
@@ -84,7 +79,7 @@ last_modified_at: 2021-10-12T06:18:00-05:00
 
 <br/>
 
-#### ✏️POST - HTML Form
+#### 2. POST - HTML Form
 
 - ##### content-type: application/x-www.form.urlencoded
 
@@ -94,7 +89,7 @@ last_modified_at: 2021-10-12T06:18:00-05:00
 
 <br/>
 
-#### ✏️HTTP message body에 데이터를 직접 담아서 요청
+#### 3. HTTP message body에 데이터를 직접 담아서 요청
 
 - ##### **HTTP** API(Rest API)에서 주로 사용, JSON, XML, TEXT
 
@@ -104,9 +99,7 @@ last_modified_at: 2021-10-12T06:18:00-05:00
 
 <br/>
 
-<br/>
-
-#### ✏️참고
+#### 🔎참고 (content-type)
 
 ##### <span style="color:orange">content-type</span>은 <span style="color:orange">HTTP 메시지 바디의 데이터 형식</span>을 지칭하며
 
@@ -114,61 +107,12 @@ last_modified_at: 2021-10-12T06:18:00-05:00
 
 ##### POST HTML Form 형식으로 데이터를 전달하면, HTTP 메시지 바디에 해당 데이터를 포함해서 보내기 때문에, 바디에 포함된 데이터가 어떤 형식인지 <span style="color:orange">content-type을 꼭 지정</span>해야 한다. 이렇게 <span style="color:orange">폼으로 데이터를 전송</span>하는 형식을 <span style="color:orange">application/x-www-form-urlencoded</span> 라 한다.
 
-<br/>
-
 ##### request.getParameter()는 <span style="color:orange">GET URL 쿼리 파라미터 형식</span>과, <span style="color:orange">POST HTML Form 형식</span> 둘 다 지원한다.
 
 <br/>
 
 <br/>
 
-## 💡 HttpServletResponse 역할
-
-- #### HTTP 응답 메시지 생성
-
-  - ##### HTTP 응답코드 생성
-  - ##### 헤더 생성
-  - ##### 바디 생성
-
-- #### 편의 기능 제공
-
-  - ##### Content-Type, 쿠키, Redirect
+#### 🔎자료 - [스프링 MVC 1편](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1/dashboard)
 
 <br/>
-
-#### HTTP 응답 데이터 - 단순 텍스트, HTML
-
-- ##### 단순 텍스트 응답
-  
-  - ##### writer.println("ok") 등
-- ##### HTML 응답
-- ##### HTTP API - messageBody JSON응답
-
-<br/>
-
-<br/>
-
-## 🧾 정리
-
-- ####  HttpServletRequest 역할 
-
-  - ##### <span style="color:orange">**HTTP 요청 메시지를 파싱**</span> ,결과를 **<span style="color:orange">HttpServletRequest</span>** 객체에 담아서 제공
-
-  - ##### 임시 저장소 기능, 세션 관리 기능 제공
-
-
-
-- ####  HttpServletResponse 역할
-
-  - ##### HTTP 응답 메시지 생성, 편의 기능 제공
-
-
-
-- #### HTTP 요청 데이터
-  - ##### HTTP 요청 데이터를 통해서 클라이언트가 서버에게 메세지를 전달하는 방법
-
-    - ##### GET - 쿼리 파라미터
-
-    - ##### POST - HTML Form
-
-    - ##### HTTP message body에 데이터를 직접 담아서 요청

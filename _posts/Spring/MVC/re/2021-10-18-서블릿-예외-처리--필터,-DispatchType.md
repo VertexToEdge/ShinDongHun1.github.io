@@ -1,6 +1,6 @@
 ---
-title:  "스프링 MVC 공부하기[16]"
-excerpt: "서블릿 예외 처리 -필터. 인터셉터 , DispatchType"
+title:  "서블릿 예외 처리 -필터, DispatchType"
+excerpt: "스프링 MVC 공부하기[25]"
 date:   2021-10-18 01:01:00
 header:
   teaser: /assets/images/spring.png
@@ -12,11 +12,8 @@ tags:
   - MVC
 last_modified_at: 2021-10-18T01:01:00
 
+
 ---
-
-<br/>
-
-[스프링 MVC 2편](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-2/dashboard)를 보고 공부하고 정리한 내용을 올립니다
 
 <br/>
 
@@ -124,7 +121,17 @@ filterRegistrationBean.setDispatcherTypes(DispatcherType.REQUEST,DispatcherType.
 <br/>
 
 1. ##### WAS(/error-ex, dispatchType=REQUEST) -> 필터 -> 서블릿 -> 인터셉터 -> 컨트롤러
+
 2. ##### WAS(여기까지 전파) <- 필터 <- 서블릿 <- 인터셉터 <- 컨트롤러(예외발생)
+
 3. ##### WAS 오류 페이지 확인
+
 4. ##### WAS(/error-page/500, dispatchType=ERROR) -> 필터(x) -> 서블릿 -> 인터셉터(x) -> 컨트롤러(/error-page/500) -> View
 
+<br/>
+
+<br/>
+
+#### 🔎 자료 - [스프링 MVC 2편](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-2/dashboard)
+
+<br/>

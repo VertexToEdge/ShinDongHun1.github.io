@@ -1,6 +1,6 @@
 ---
-title:  "스프링 MVC 공부하기[6]"
-excerpt: "요청 메시지 조회"
+title:  "요청 메시지 조회-HttpEntity, @RequestBody"
+excerpt: "스프링 MVC 공부하기[12]"
 date:   2021-10-13 19:50:00
 header:
   teaser: /assets/images/spring.png
@@ -16,41 +16,35 @@ last_modified_at: 2021-10-13T17:50:00
 
 <br/>
 
-[스프링 MVC 1편](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1/dashboard)를 보고 공부하고 정리한 내용을 올립니다
-
-<br/>
-
-## 💡 HTTP 요청 메시지 조회 - 단순 텍스트
-
-<br/>
+### 💡 HTTP 요청 메시지 조회 - 단순 텍스트
 
 ##### HTTP message body 에 데이터를 직접 담아서 요청
 
-- 데이터 형식은 주로 JSON
-- HTTP API에서 주로 사용
+- ##### 데이터 형식은 주로 JSON
+- ##### HTTP API에서 주로 사용
 
 <br/>
 
-요청 파라미터와 다르게 HTTP 메시지 바디를 통해 데이터가 직접 넘어오는 경우는 @RequestParam, @ModelAttribute를 사용할 수 없다(HTML Form 형식 제외)
+##### 요청 파라미터와 다르게 HTTP 메시지 바디를 통해 데이터가 직접 넘어오는 경우는 @RequestParam, @ModelAttribute를 사용할 수 없다(HTML Form 형식 제외)
 
 <br/>
 
-#### HttpEntity 사용
+#### 🌌 HttpEntity 사용
 
 <script src="https://gist.github.com/ShinDongHun1/35bb65d9511276949e08f4206dce5b22.js"></script>
 
 - ##### HttpEntity: HTTP header, body 정보를 편리하게 조회 
 
-  - 메시지 바디 정보를 직접 조회 
-  - 요청 파라미터를 조회하는 기능과 관계 없음 @RequestParam X, @ModelAttribute X 
+  - ##### 메시지 바디 정보를 직접 조회 
+  - ##### 요청 파라미터를 조회하는 기능과 관계 없음 @RequestParam X, @ModelAttribute X 
 
 - ##### HttpEntity는 응답에도 사용 가능 
 
-  - 메시지 바디 정보 직접 반환 헤더 정보 포함 가능 view 조회X
+  - ##### 메시지 바디 정보 직접 반환 헤더 정보 포함 가능 view 조회X
 
 <br/>
 
-##### HttpEntity 를 상속받은 다음 객체들도 같은 기능을 제공한다. 
+##### 🔎 HttpEntity 를 상속받은 다음 객체들도 같은 기능을 제공한다. 
 
 - ##### RequestEntity 
 
@@ -66,7 +60,7 @@ last_modified_at: 2021-10-13T17:50:00
 
 <br/>
 
-### ✏️ @RequestBody 사용
+### 🌌 @RequestBody 
 
 <script src="https://gist.github.com/ShinDongHun1/1493e492f0a3d80ab1b376b9171658f0.js"></script>
 
@@ -92,7 +86,7 @@ ObjectMapper를 통해 조회할 수 있지만, 그렇게 조회하는 방법은
 
 <br/>
 
-#### ✏️ @RequestBody - 객체 변환 사용
+#### 🌌 @RequestBody - 객체 변환 사용
 
 <script src="https://gist.github.com/ShinDongHun1/bab8be1ba22cc53327349332ac0bb060.js"></script>
 
@@ -104,7 +98,7 @@ ObjectMapper를 통해 조회할 수 있지만, 그렇게 조회하는 방법은
 
 <br/>
 
-#### ✏️ requestBodyJsonV4 - HttpEntity 사용
+#### 🌌 requestBodyJsonV4 - HttpEntity 사용
 
 <script src="https://gist.github.com/ShinDongHun1/7ee0ac7283060e4db725452075c00d8a.js"></script>
 
@@ -112,7 +106,7 @@ ObjectMapper를 통해 조회할 수 있지만, 그렇게 조회하는 방법은
 
 <br/>
 
-#### ✏️ 객체를 응답으로 보내기
+#### 🌌 객체를 응답으로 보내기
 
 <script src="https://gist.github.com/ShinDongHun1/a282b91cd053d99404591215b0d8baea.js"></script>
 
@@ -136,7 +130,7 @@ ObjectMapper를 통해 조회할 수 있지만, 그렇게 조회하는 방법은
 
 ## 🧾 정리
 
-#### ✏️ 요청 파라미터 vs HTTP 메시지 바디 
+#### 🌌 요청 파라미터 vs HTTP 메시지 바디 
 
 - ##### 요청 파라미터를 조회하는 기능: 
   - ##### @RequestParam , @ModelAttribute HTTP 
@@ -147,13 +141,13 @@ ObjectMapper를 통해 조회할 수 있지만, 그렇게 조회하는 방법은
 
 <br/>
 
-#### ✏️ HTTP 요청 메시지 조회 - 단순 텍스트
+#### 🌌 HTTP 요청 메시지 조회 - 단순 텍스트
 
 - ##### @RequestBody 사용
 
 <br/>
 
-#### ✏️ HTTP 요청 메시지 조회 - JSON
+#### 🌌 HTTP 요청 메시지 조회 - JSON
 
 - ##### @RequestBody - 객체 변환 사용
 
@@ -161,4 +155,12 @@ ObjectMapper를 통해 조회할 수 있지만, 그렇게 조회하는 방법은
 
 <br/>
 
-#### ✏️@RequestBody는 생략 불가능
+#### 🌌@RequestBody는 생략 불가능
+
+<br/>
+
+<br/>
+
+#### 🔎 자료 - [스프링 MVC 1편](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1/dashboard)
+
+<br/>
