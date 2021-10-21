@@ -1,7 +1,7 @@
 ---
 title:  "Referential integrity constraint violation"
 excerpt: "JPA에서 연관관계로 맺어진 엔티티의 삭제 시 주의점"
-date:   2021-10-26 22:03:00 
+date:   2021-10-20 22:03:00 
 header:
   teaser: /assets/images/spring.png
 
@@ -11,7 +11,7 @@ tags:
   - Spring
   - 오류
   - error
-last_modified_at: 2021-10-26T22:03:00
+last_modified_at: 2021-10-20T22:03:00
 ---
 
 <br/><br/>
