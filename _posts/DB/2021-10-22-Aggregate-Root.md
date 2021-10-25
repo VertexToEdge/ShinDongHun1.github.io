@@ -5,7 +5,7 @@ date:   2021-10-22 20:07:00
 header:
   teaser: /assets/images/spring.png
 
-categories: JPA
+categories: rdb
 tags:
   - 도메인
   - DDD
