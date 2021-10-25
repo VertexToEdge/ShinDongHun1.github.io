@@ -27,6 +27,13 @@
                            {% endif %}
                        {% endfor %}
                    </ul>
+                   <ul>
+                       {% for category in site.categories %}
+                          {% if category[0] == "DATA" %}
+                              <li><a href="/categories/DATA" class="">DATA({{category[1].size}})</a></li>
+                           {% endif %}
+                       {% endfor %}
+                   </ul>
 
                     <ul>
                        {% for category in site.categories %}
