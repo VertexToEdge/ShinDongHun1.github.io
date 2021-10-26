@@ -20,7 +20,7 @@ last_modified_at: 2021-10-16T21:02:00
 
 ## 💡 서블릿이 지원하는 세션
 
-### 🌌 HttpSession 
+### ☀️ HttpSession 
 
 ##### 🔎 세션 생성과 조회
 
@@ -38,7 +38,7 @@ last_modified_at: 2021-10-16T21:02:00
 - ##### request.getSession(false)
 
   - 세션이 있으면 기존 세션을 반환한다.
-  - 세션이 없으면 새로운 세션을 생성하지 않는다. null 을 반환한다.
+  - ##### 세션이 없으면 새로운 세션을 생성하지 않는다. null 을 반환한다.
 
 - request.getSession() : 신규 세션을 생성하는 request.getSession(true) 와 동일하다.
 
@@ -91,7 +91,7 @@ Member member =(Member)session.getAttribute(SessionConst.LOGIN_MEMBER);
 
 <br/>
 
-### 🌌 TrackingModes
+### ☀️  TrackingModes
 
 API방식이 아닌 방법으로, 로그인을 처음 시도하면 URL이 다음과 같이 jsessionid를 포함하고 있는 것을 확인할 수 있다.
 
@@ -131,7 +131,7 @@ server.servlet.session.tracking-modes=cookie
 
 <br/>
 
-### 🌌 세션 타임아웃 설정
+### ☀️  세션 타임아웃 설정
 
 - #### 스프링 부트로 글로벌 설정
 
@@ -151,6 +151,6 @@ server.servlet.session.tracking-modes=cookie
 
 <br/>
 
-#### 🔎 자료 - [스프링 MVC 2편](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-2/dashboard)
+### 📔 Reference
 
-<br/>
+#####  [스프링 MVC 2편](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-2/dashboard)

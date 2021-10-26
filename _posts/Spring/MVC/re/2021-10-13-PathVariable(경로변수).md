@@ -33,13 +33,13 @@ last_modified_at: 2021-10-13T17:33:00
 
 <br/>
 
-#### 🌌 다중 사용
+#### ☀️ 다중 사용
 
 <script src="https://gist.github.com/ShinDongHun1/3b7dac34a3768f0c134c0512276c1182.js"></script>
 
 <br/>
 
-#### 🌌 특정 파라미터가 있거나 없는 조건을 추가 가능
+#### ☀️ 특정 파라미터가 있거나 없는 조건을 추가 가능
 
 파라미터로 추가 매핑 
 
@@ -53,7 +53,7 @@ last_modified_at: 2021-10-13T17:33:00
 
 <br/>
 
-##### 🌌 미디어 타입 조건 매핑 - HTTP 요청 Content-Type, consume
+#### ☀️ 미디어 타입 조건 매핑 - HTTP 요청 Content-Type, consume
 
 <script src="https://gist.github.com/ShinDongHun1/073f5ddeff78879fb61ce05a5a4219da.js"></script>
 
@@ -61,16 +61,16 @@ last_modified_at: 2021-10-13T17:33:00
 
 <br/>
 
-##### 🌌 미디어 타입 조건 매핑 - HTTP 요청 Accept, produce
+#### ☀️미디어 타입 조건 매핑 - HTTP 요청 Accept, produce
 
 <script src="https://gist.github.com/ShinDongHun1/460a77ef67459bf7120aa596717bd85d.js"></script>
 
-요청의 Accept가 text/html 데이터를 받을 수 있어야 함. 그렇지 않으면 오류
+##### 요청의 Accept가 text/html 데이터를 받을 수 있어야 함. 그렇지 않으면 오류
 
 <br/>
 
 <br/>
 
-#### 🔎자료 - [스프링 MVC 1편](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1/dashboard)
+### 📔 Reference
 
-<br/>
+##### [스프링 MVC 1편](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1/dashboard)

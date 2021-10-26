@@ -1,6 +1,6 @@
 ---
-title:  "HTTP 요청 파라미터 조회 -@RequestParam, @ModelAttribute"
-excerpt: "스프링 MVC 공부하기[11]"
+title:  "@RequestParam, @ModelAttribute"
+excerpt: "HTTP 요청 파라미터 조회방법"
 date:   2021-10-13 19:38:00
 header:
   teaser: /assets/images/spring.png
@@ -16,8 +16,6 @@ last_modified_at: 2021-10-13T17:38:00
 <br/>
 
 ## 💡 HTTP 요청 파라미터 조회
-
-#### **🔎 **쿼리 파라미터와 HTML Form 조회
 
 ##### 1. GET , 쿼리 파라미터 전송
 
@@ -39,19 +37,21 @@ last_modified_at: 2021-10-13T17:38:00
 
 <br/>
 
-##### GET 쿼리 파리미터 전송 방식이든, POST HTML Form 전송 방식이든 둘다 형식이 같으므로 구분없이 조회할 수 있다. 
+##### GET 쿼리 파리미터 전송 방식이든, POST HTML Form 전송 방식이든 둘다 형식이 같으므로 구분없이 조회할 수 있다. (username=hello&age=20)
 
-##### 이것을 간단히 <span style="color:orange">요청 파라미터(request parameter) 조회</span>라 한다
+#### 위의 형식을 <span style="color:orange">요청 파라미터(request parameter)</span>라 한다
 
 <br/>
 
-### 🌌 HTTP 요청 파라미터 조회 - @RequestParam
+### ☀️ <span style="color:orange">@RequestParam</span>
+
+##### @RequestParam을 이용하여 요청 파라미터를 조회해보자.
 
 <script src="https://gist.github.com/ShinDongHun1/442526edb45d5ce92c80c891b2b7953a.js"></script>
 
-- ##### @RequestParam의 name(value) 속성이 파라미터 이름으로 사용
+- ##### @RequestParam의 name(value) 속성을 파라미터 이름으로 사용
 
-- ##### HTTP 파라미터 이름이 변수 이름과 같으면 @RequestParam(name="xx") 생략 가능
+- ##### HTTP 파라미터 이름이 변수 이름과 같으면 (name="xx") 생략 가능
 
 - ##### String , int , Integer 등의 단순 타입이면 @RequestParam 도 생략 가능
 
@@ -61,7 +61,9 @@ last_modified_at: 2021-10-13T17:38:00
 
 <script src="https://gist.github.com/ShinDongHun1/b69c85af9c338a7793173064b3195ef7.js"></script>
 
-#####  주의  
+<br/>
+
+####  👿주의  
 
 - ##### @RequestParam 애노테이션을 생략하면 스프링 MVC는 내부에서 @RequestParam의  required속성을 false로 적용한다. 
 
@@ -85,11 +87,9 @@ last_modified_at: 2021-10-13T17:38:00
 
 <br/>
 
-### 🌌 HTTP 요청 파라미터 조회 - @ModelAttribute
+### ☀️ HTTP 요청 파라미터 조회 - @ModelAttribute
 
-보통 개발을 하면 요청 파라미터를 받아서 필요한 객체를 만들고, 그 객체에 값을 넣어주는데
-
-##### 스프링은 이 과정을 자동화해주는 @ModelAttribute란 기능을 제공한다.
+##### 보통 개발을 하면 요청 파라미터를 받아서 필요한 객체를 만들고, 그 객체에 값을 넣어주는데 <br>스프링은 이 과정을 자동화해주는 @ModelAttribute란 기능을 제공한다.
 
 <br/>
 
@@ -115,6 +115,10 @@ last_modified_at: 2021-10-13T17:38:00
 
 <br/>
 
+<br/>
+
+### 참고
+
 #### 🔎 @ModelAttribute 는 생략할 수 있다. 
 
 ##### 그런데 @RequestParam 도 생략할 수 있으니 혼란이 발생할 수 있다.
@@ -135,9 +139,9 @@ last_modified_at: 2021-10-13T17:38:00
 
 <br/>
 
-##### 🔎 바인딩 오류
+#### 🔎 바인딩 오류
 
--  age=abc 처럼 숫자가 들어가야 할 곳에 문자를 넣으면 BindException 이 발생한다. 이런 바인딩 오류를 처리하는 방법은 검증 부분에서 다룬다
+-  ##### age=abc 처럼 숫자가 들어가야 할 곳에 문자를 넣으면 BindException 이 발생한다. 이런 바인딩 오류를 처리하는 방법은 검증 부분에서 다룬다
 
 <br/>
 
@@ -145,7 +149,7 @@ last_modified_at: 2021-10-13T17:38:00
 
 ## 🧾 정리
 
-#### 🌌  쿼리 파라미터, HTML Form 조회
+#### ☀️  쿼리 파라미터, HTML Form 조회
 
 - #####  @RequestParam : 요청 파라미터의 값을 가져온다.
 
@@ -155,6 +159,6 @@ last_modified_at: 2021-10-13T17:38:00
 
 <br/>
 
-#### 🔎 자료 - [스프링 MVC 1편](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1/dashboard)
+### 📔 Reference
 
-<br/>
+##### [스프링 MVC 1편](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1/dashboard)

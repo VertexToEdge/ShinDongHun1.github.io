@@ -19,15 +19,15 @@ last_modified_at: 2021-10-12T06:19:00-05:00
 
 - #### HTTP 응답 메시지 생성
 
-  - ##### HTTP 응답코드 생성
+  - HTTP 응답코드 생성
 
-  - ##### 헤더 생성
+  - 헤더 생성
 
-  - ##### 바디 생성
+  - 바디 생성
 
 - #### 편의 기능 제공
 
-  - ##### Content-Type, 쿠키, Redirect
+  - Content-Type, 쿠키, Redirect
 
 <br/>
 
@@ -45,6 +45,8 @@ last_modified_at: 2021-10-12T06:19:00-05:00
 
 <br/>
 
-#### 🔎자료 - [스프링 MVC 1편](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1/dashboard)
-
 <br/>
+
+### 📔 Reference
+
+##### [스프링 MVC 1편](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1/dashboard)

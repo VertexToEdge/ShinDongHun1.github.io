@@ -24,7 +24,13 @@ last_modified_at: 2021-10-13T17:32:00
 
 <br/>
 
-### 🔎 @RequestMapping("/hello-basic")
+<br/>
+
+### 🔎 예시
+
+```java
+ @RequestMapping("/hello-basic")
+```
 
 - ##### /hello-baisc : URL 호출이 오면 이 메서드가 실행되도록 매핑한다.
 
@@ -39,6 +45,6 @@ last_modified_at: 2021-10-13T17:32:00
 
 <br/>
 
-#### 🔎자료 - [스프링 MVC 1편](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1/dashboard)
+### 📔 Reference
 
-<br/>
+##### [스프링 MVC 1편](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1/dashboard)

@@ -43,9 +43,9 @@ last_modified_at: 2021-10-12T06:18:00-05:00
 
 <br/>
 
-### 🌌 HttpServletRequest가 제공하는 추가 기능
+### 💡 HttpServletRequest가 제공하는 추가 기능
 
-#### 💡 임시 저장소 기능
+#### ☀️ 임시 저장소 기능
 
 ##### 해당 HTTP 요청이 시작부터 끝날 때 까지 유지되는 임시 저장소 기능
 
@@ -53,7 +53,7 @@ last_modified_at: 2021-10-12T06:18:00-05:00
 
 - ##### 조회: request.getAttribute(name)
 
-#### 💡 세션 관리 기능
+#### ☀️ 세션 관리 기능
 
 - ##### request.getSession(true) 
 
@@ -67,7 +67,7 @@ last_modified_at: 2021-10-12T06:18:00-05:00
 
 ## 💡 HTTP 요청 데이터
 
-#### 🌌 HTTP 요청 데이터를 통해서 클라이언트가 서버에게 메세지를 전달하는 방법
+#### HTTP 요청 데이터를 통해서 클라이언트가 서버에게 메세지를 전달하는 방법
 
 #### 1. GET - 쿼리 파라미터
 
@@ -113,6 +113,6 @@ last_modified_at: 2021-10-12T06:18:00-05:00
 
 <br/>
 
-#### 🔎자료 - [스프링 MVC 1편](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1/dashboard)
+### 📔 Reference
 
-<br/>
+##### [스프링 MVC 1편](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1/dashboard)

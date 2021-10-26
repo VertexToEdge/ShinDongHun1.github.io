@@ -15,11 +15,13 @@ last_modified_at: 2021-10-13T17:31:00
 
 <br/>
 
-### 💡 HandlerMapping과 HandlerAdapter
+## 💡 HandlerMapping과 HandlerAdapter
 
 ##### 스프링 부트가 자동으로 등록하는 핸들러 매핑과 핸들러 어댑터
 
-#### 🌌HandlerMapping(인터페이스)
+#### ☀️HandlerMapping(인터페이스)
+
+##### <span style="color:orange">요청 정보를 기준으로 어떤 컨트롤러를 사용할 것인가를 결정</span>해주는 인터페이스이다.
 
 > ##### 0 = RequestMappingHandlerMapping : 애노테이션 기반의 컨트롤러인 @RequestMapping에서 사용 
 >
@@ -27,7 +29,9 @@ last_modified_at: 2021-10-13T17:31:00
 
 <br/>
 
-#### 🌌HandlerAdapter(인터페이스)
+#### ☀️HandlerAdapter(인터페이스)
+
+##### <span style="color:orange">HandlerMapping에서 결정된 핸들러 정보로 해당 메서드를 직접 호출</span>해주는 인터페이스이다.
 
 > ##### 0 = RequestMappingHandlerAdapter : 애노테이션 기반의 컨트롤러인 @RequestMapping에서 사용 
 >
@@ -39,7 +43,7 @@ last_modified_at: 2021-10-13T17:31:00
 
 <br/>
 
-### 💡 뷰 리졸버
+## 💡 뷰 리졸버
 
 ##### 스프링 부트는 InternalResourceViewResolver 라는 뷰 리졸버를 자동으로 등록하는데, 이때 application.properties 에 등록한 spring.mvc.view.prefix , spring.mvc.view.suffix 설정 정보를 사용해서 등록한다.
 
@@ -62,6 +66,7 @@ spring.mvc.view.suffix=.jsp
 
 <br/>
 
-#### 🔎자료 - [스프링 MVC 1편](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1/dashboard)
+### 📔 Reference
 
-<br/>
+##### [스프링 MVC 1편](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1/dashboard)
+

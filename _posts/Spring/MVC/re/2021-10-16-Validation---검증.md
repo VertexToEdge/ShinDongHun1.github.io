@@ -20,8 +20,6 @@ last_modified_at: 2021-10-16T16:43:00
 
 ## 💡 검증
 
-<br/>
-
 #### 클라이언트 검증과 서버 검증
 
 - 클라이언트 검증은 조작할 수 있으므로 보안에 취약하다.
@@ -29,7 +27,7 @@ last_modified_at: 2021-10-16T16:43:00
 - 둘을 적절히 섞어서 사용하되, 최종적으로 서버 검증은 필수
 - API 방식을 사용하면 API 스펙을 잘 정의해서 검증 오류를 API 응답 결과에 잘 남겨주어야 함
 
-내가 예전에 참고했던 영상
+#### 참고
 
 [유튜브 - [10분 테코톡] 👩🏻‍💻👨🏻‍💻해리&션의 MVC 패턴](https://www.youtube.com/watch?v=uoVNJkyXX0I&t=339s)
 
@@ -41,11 +39,11 @@ last_modified_at: 2021-10-16T16:43:00
 
 검증 오류 코드로 메시지 코드들을 생성한다.
 
-MessageCodesResolver는 인터페이스고 DefaultMessageCodesResolver는 기본 구현체이다
+##### MessageCodesResolver는 인터페이스고 DefaultMessageCodesResolver는 기본 구현체이다
 
 #### 객체 오류
 
-- 객체 오류의 경우 다음 순서로 2가지 생성
+객체 오류의 경우 다음 순서로 2가지의 오류 코드를 생성한다.
 
 - ##### 1.: <span style="color:orange">code </span>+ "." + <span style="color:blue">object name</span>
 
@@ -59,7 +57,7 @@ MessageCodesResolver는 인터페이스고 DefaultMessageCodesResolver는 기본
 
 #### 필드 오류
 
-- ##### 필드 오류의 경우 다음 순서로 4가지 메시지 코드 생성
+필드 오류의 경우 다음 순서로 4가지 메시지 코드 생성
 
 - ##### 1.: <span style="color:orange">code</span> + "." + <span style="color:blue">object name</span> + "." + <span style="color:pink">field</span>
 
@@ -87,7 +85,9 @@ MessageCodesResolver는 인터페이스고 DefaultMessageCodesResolver는 기본
 
 Valid는 자바 표준으로 javax에 속해있으며, 사용하려면 build.gradle 에 의존관계를 추가해주어야 한다.
 
-##### implementation 'org.springframework.boot:spring-boot-starter-validation'
+```properties
+implementation 'org.springframework.boot:spring-boot-starter-validation'
+```
 
 <br/>
 
@@ -97,11 +97,9 @@ Valid는 자바 표준으로 javax에 속해있으며, 사용하려면 build.gra
 
 <br/>
 
-<br/>
-
 #### 바인딩에 성공한 필드만 Valiation 적용
 
-타입 변환에 성공하여야 검증이 의미있지, 애당초 들어오는 타입 값이 잘못되었으면 TypeMismatch로 FieldError를 추가한다.
+타입 변환에 성공하여야 검증이 의미있기에, 애당초 들어오는 타입 값이 잘못되었으면 TypeMismatch로 FieldError를 추가한다.
 
 <br/>
 
@@ -111,7 +109,7 @@ Valid는 자바 표준으로 javax에 속해있으며, 사용하려면 build.gra
 
 특정 필드에 대한 검증 로직은 대부분 빈 값인지 아닌지, 특정 키기를 넘는지 아닌지와 같이 매우 일반적인 로직이다.
 
-이런 검증 로직을 표준화 한 것이 바로 Bean Validation이다
+##### 이런 검증 로직을 표준화 한 것이 바로 Bean Validation이다
 
 <br/>
 
@@ -129,9 +127,9 @@ Bean Validation을 구현한 기술중, 일반적으로 사용하는 구현체�
 
 ##### build.gradle
 
-`implementation 'org.springframework.boot:spring-boot-starter-validation'`
-
-<br/>
+```properties
+implementation 'org.springframework.boot:spring-boot-starter-validation'
+```
 
 <br/>
 
@@ -144,7 +142,7 @@ Validator 로 등록하지 않는다. 따라서 애노테이션 기반의 빈 �
 
 <br/>
 
-#### 검증 순서
+### 검증 순서
 
 1. ##### @ModelAttribute 각각의 필드에 타입 변환 시도
 
@@ -184,20 +182,20 @@ Bean Validation이 기본으로 제공하는 오류 메시지를 좀 더 자세�
 
 <br/>
 
-##### 스프링 부트 메시지 설정 추가
+#### 스프링 부트 메시지 설정 추가
 
 ##### application.properties
 
-> ##### spring.messages.basename=messages,errors
+```properties
+spring.messages.basename=messages,errors
+```
 
 <br/>
 
 ##### errors.properties
 
-> #Bean Validation 추가
->
 > ```properties
-> NotBlank={0}:값을 반드시 입력하셔야 합니다.
+>NotBlank={0}:값을 반드시 입력하셔야 합니다.
 > Size={0}:글자 수는 {2}글자 이상, {1}글자 이하이어야 합니다.
 > ```
 
@@ -215,7 +213,7 @@ Bean Validation이 기본으로 제공하는 오류 메시지를 좀 더 자세�
 
 ## 💡 Bean Validation - 오브젝트 오류
 
-##### @ScriptAssert() 사용
+#### @ScriptAssert() 사용
 
 - ##### 그러나 실제 사용해보면 제약이 많고 복잡하다
 
@@ -254,12 +252,13 @@ Bean Validation이 기본으로 제공하는 오류 메시지를 좀 더 자세�
 
 ### ✏️  해결방법
 
-- Bean Validation의 groups 기능 사용
-- Item을 직접 사용하지 않고, ItemSaveForm, ItemUpdateForm같은 폼 전송을 위한 별도의 모델 객체를 만들어서 사용
+##### 1. Bean Validation의 groups 기능 사용
+
+##### 2. Item을 직접 사용하지 않고, ItemSaveForm, ItemUpdateForm같은 폼 전송을 위한 별도의 모델 객체를 만들어서 사용
 
 <br/>
 
-#### ✏️ Bean Validation - groups 사용
+### 1. groups 사용
 
 ##### 저장용 groups 생성
 
@@ -291,13 +290,13 @@ Bean Validation이 기본으로 제공하는 오류 메시지를 좀 더 자세�
 
 <br/>
 
-## 💡 Bean Validation - HTTP 메시지 컨버터
+## 2. 모델 객체를 만들어서 사용
 
 ##### @Valid , @Validated 는 HttpMessageConverter ( @RequestBody )에도 적용할 수 있다.
 
 <br/>
 
-##### API의 경우 3가지 경우를 나누어 본다
+#### API의 경우 3가지 경우를 나누어 생각할 수 있다
 
 - 성공 요청 : 성공
 - 실패 요청 : JSON 객체로 생성하는 것 자체가 실패함
@@ -319,7 +318,57 @@ Interger 에 "q" 같이 문자열을 넣는 상황에는 해당 오류가 발생
 
 #### 검증 오류 결과
 
-<script src="https://gist.github.com/ShinDongHun1/edbaf2c59ee49f0396a94329cb630983.js"></script>
+```json
+{
+
+    "codes": [
+
+      "NotBlank.signUpMemberDto.password",
+
+      "NotBlank.password",
+
+      "NotBlank.java.lang.String",
+
+      "NotBlank"
+
+    ],
+
+    "arguments": [
+
+      {
+
+        "codes": [
+
+          "signUpMemberDto.password",
+
+          "password"
+
+        ],
+
+        "arguments": null,
+
+        "defaultMessage": "password",
+
+        "code": "password"
+
+      }
+
+    ],
+
+    "defaultMessage": "must not be blank",
+
+    "objectName": "signUpMemberDto",
+
+    "field": "password",
+
+    "rejectedValue": "",
+
+    "bindingFailure": false,
+
+    "code": "NotBlank"
+
+  }
+```
 
 ##### 실제 개발할 때는 이 객체들을 그대로 사용하지 말고, 필요한 데이터만 뽑아서, 별도의 API스펙을 정의하고 그에 맞는 객체로 만들어서 반환해야 한다
 
@@ -327,6 +376,8 @@ Interger 에 "q" 같이 문자열을 넣는 상황에는 해당 오류가 발생
 
 <br/>
 
-#### 🔎 자료 - [스프링 MVC 2편](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-2/dashboard)
+### 📔 Reference
 
-<br/>
+#####  [스프링 MVC 2편](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-2/dashboard)
+
+##### [유튜브 - [10분 테코톡] 👩🏻‍💻👨🏻‍💻해리&션의 MVC 패턴](https://www.youtube.com/watch?v=uoVNJkyXX0I&t=339s)
