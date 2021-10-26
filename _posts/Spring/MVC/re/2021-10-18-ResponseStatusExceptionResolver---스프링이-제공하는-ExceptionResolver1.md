@@ -1,6 +1,6 @@
 ---
-title:  "ResponseStatusExceptionResolver - 스프링이 제공하는 ExceptionResolver1"
-excerpt: "스프링 MVC 공부하기[29]"
+title:  "ResponseStatusExceptionResolver"
+excerpt: "HTTP 상태코드를 바꿔주는 ExceptionResolver"
 date:   2021-10-18 15:10:00
 header:
   teaser: /assets/images/spring.png
@@ -30,9 +30,9 @@ last_modified_at: 2021-10-18T15:10:00
 
 <br/>
 
-### 🌌 ResponseStatusExceptionResolver
+### 💡 ResponseStatusExceptionResolver
 
-##### 예외에 따라서 HTTP 상태 코드를 지정해주는 역할을 한다.
+##### 예외에 따라서 <span style="color:orange">HTTP 상태 코드를 지정해주는 역할</span>을 한다.
 
 #### 🔎 다음 두 가지 경우를 처리한다
 
@@ -42,7 +42,9 @@ last_modified_at: 2021-10-18T15:10:00
 
 <br/>
 
-#### 1. @ResponseStatus 가 달려있는 예외
+<br/>
+
+### 1. @ResponseStatus 가 달려있는 예외
 
 <script src="https://gist.github.com/ShinDongHun1/51d20137dd26a5ac7a2231c73bcb2f0d.js"></script>
 
@@ -67,7 +69,9 @@ error.bad=잘못된 요청 오류입니다. 메시지 사용
 
 <br/>
 
-#### 2. ResponseStatusException
+<br/>
+
+### 2. ResponseStatusException
 
 ##### @ResponseStatus 는 개발자가 직접 변경할 수 없는 예외에는 적용할 수 없다. (애노테이션을 직접 넣어야 하는데, 내가 코드를 수정할 수 없는 라이브러리의 예외 코드 같은 곳에는 적용할 수 없다.)
 추가로 애노테이션을 사용하기 때문에 조건에 따라 동적으로 변경하는 것도 어렵다.
@@ -76,7 +80,7 @@ error.bad=잘못된 요청 오류입니다. 메시지 사용
 
 <br/>
 
-##### 🔎 ApiExceptionController - 추가
+##### 🔎 ApiExceptionController에 추가
 
 ```java
 @GetMapping("/api/response-status-ex2")
