@@ -1,6 +1,6 @@
 ---
-title:  "@ExceptionResolver- 스프링이 제공하는 ExceptionResolver3"
-excerpt: "스프링 MVC 공부하기[31]"
+title:  "@ExceptionHandler"
+excerpt: "API예외 처리- ExceptionResolver"
 date:   2021-10-18 16:20:00
 header:
   teaser: /assets/images/spring.png
@@ -16,27 +16,13 @@ last_modified_at: 2021-10-18T16:20:00
 
 <br/>
 
-### 💡 스프링 부트가 기본으로 제공하는 ExceptionResolver는 다음과 같다.
+## 💡 @ExceptionResolver
 
-##### 🔎HandlerExceptionResolverComposite에 다음 순서로 등록
+##### 스프링은 API 예외 처리 문제를 해결하기 위해 @ExceptionHandler 라는 애노테이션을 사용하는 매우 편리한 예외 처리 기능을 제공한다.
 
-1. ##### ExceptionHandlerExceptionResolver
+##### 이것을 처리하는것이 바로 ExceptionHandlerExceptionResolver 이다.
 
-2. ##### ResponseStatusExceptionResolver -> HTTP 응답 코드 변경
-
-3. ##### DefaultHandlerExceptionResolver -> 스프링 내부 예외 처리
-
-<br/>
-
-<br/>
-
-### 🌌 @ExceptionResolver
-
-##### 스프링은 API 예외 처리 문제를 해결하기 위해 @ExceptionHandler 라는 애노테이션을 사용하는 매우 편리한 예외 처리 기능을 제공하는데, 
-
-##### 이것이 바로 ExceptionHandlerExceptionResolver 이다.
-
-##### 스프링은 ExceptionHandlerExceptionResolver 를 기본으로 제공하고, 기본으로 제공하는ExceptionResolver 중에 우선순위도 가장 높다. 
+##### 스프링은 ExceptionHandlerExceptionResolver 를 기본으로 제공하고, 기본으로 제공하는 ExceptionResolver 중에 우선순위도 가장 높다. 
 
 ##### 실무에서 API 예외 처리는 대부분 이 기능을 사용한다.
 
@@ -44,9 +30,11 @@ last_modified_at: 2021-10-18T16:20:00
 
 #### 🔎동작 원리
 
-##### @ExceptionResolver 에노테이션을 선언하고, 해당 컨트롤러에서 처리하고 싶은 예외를 지정해주면 된다. 해당 컨트롤러에서 예외가 발생하면 이 메서드가 호출된다.
+##### @ExceptionResolver 에노테이션을 선언하고, 해당 컨트롤러에서 처리하고 싶은 예외를 지정해주면 된다. 
 
-##### 🌌 참고로 지정한 예외 또는 그 예외의 자식 클래스를 모두 잡을 수 있다.
+##### 해당 컨트롤러에서 예외가 발생하면 이 메서드가 호출된다.
+
+##### 참고로 지정한 예외 또는 그 예외의 자식 클래스를 모두 잡을 수 있다.
 
 
 
@@ -75,7 +63,7 @@ public class ErrorResult {
 
 <br/>
 
-#### 🔎파리미터와 응답
+#### 🔎 파리미터와 응답
 
 ##### @ExceptionHandler 에는 마치 스프링의 컨트롤러의 파라미터 응답처럼 다양한 파라미터와 응답을 지정할 수 있다.
 
@@ -99,7 +87,9 @@ public class ErrorResult {
 
 <br/>
 
-#### 🔎 자료 - [스프링 MVC 2편](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-2/dashboard)
+### 📔 Reference
+
+##### [스프링 MVC 2편](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-2/dashboard)
 
 <br/>
 

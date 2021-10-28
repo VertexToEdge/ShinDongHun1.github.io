@@ -1,6 +1,6 @@
 ---
 title:  "ArgumentResolver 활용"
-excerpt: "스프링 MVC 공부하기[23]"
+excerpt: "나만의 어노테이션 만들기"
 date:   2021-10-17 20:51:00
 header:
   teaser: /assets/images/spring.png
@@ -17,15 +17,11 @@ last_modified_at: 2021-10-17T20:51:00
 
 <br/>
 
-[스프링 MVC 2편](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-2/dashboard)를 보고 공부하고 정리한 내용을 올립니다
-
-<br/>
-
 ## 💡 ArgumentResolver 활용
 
 <script src="https://gist.github.com/ShinDongHun1/26b68e43f3b5b99e35be393c9a05aa62.js"></script>
 
-다음 코드에서 **@SessionAttribute(name = SessionConst.LOGIN_MEMBER , required = false)**를 바꿔보도록 하자.
+**@SessionAttribute(name = SessionConst.LOGIN_MEMBER , required = false)**를 바꿔보도록 하자.
 
 <br/>
 
@@ -61,7 +57,7 @@ last_modified_at: 2021-10-17T20:51:00
 
 <br/>
 
-### ✏️어노테이션 적용하기
+### 💡 어노테이션 적용하기
 
 <script src="https://gist.github.com/ShinDongHun1/c8f1c57f4fa15ade30371adb6d525909.js"></script>
 
@@ -75,6 +71,9 @@ last_modified_at: 2021-10-17T20:51:00
 
 <br/>
 
-#### 🔎 자료 - [스프링 MVC 2편](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-2/dashboard)
+### 📔 Reference
 
+##### [스프링 MVC 2편](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-2/dashboard)
+
+<br/>
 <br/>
