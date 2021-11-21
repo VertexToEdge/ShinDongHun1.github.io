@@ -46,7 +46,7 @@
                    <ul>
                          {% for category in site.categories %}
                              {% if category[0] == "purpleBook" %}
-                                   <li><a href="/categories/MVC" class="">혼자 구현하는 웹 서비스({{category[1].size}})</a></li>
+                                   <li><a href="/categories/purpleBook" class="">혼자 구현하는 웹 서비스({{category[1].size}})</a></li>
                               {% endif %}
                           {% endfor %}
                    </ul>
