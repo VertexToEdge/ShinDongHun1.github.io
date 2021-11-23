@@ -101,6 +101,15 @@
 
 
 
+          <span class="nav__sub-title">FRONT-END</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Vue" %}
+                        <li><a href="/categories/algorithm" class="">Vue.js({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
 
 
             <span class="nav__sub-title">Algorithm</span>

@@ -26,6 +26,9 @@
   font-weight: normal;
   font-style: normal;
 }
+
+
+
 html {
   h2 {
     font-size: 1.3em;
@@ -86,6 +89,11 @@ html {
       font-size: 21px;
     }
 
+  }
+
+  @media (min-width: 80em)
+  .page {
+    padding-right: 120px;
   }
 
 
