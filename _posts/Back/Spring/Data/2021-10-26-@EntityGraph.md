@@ -1,6 +1,6 @@
 ---
 title:  "@EntityGraph"
-excerpt: "@EntityGraph 사용법"
+excerpt: "EntityGraph 사용법"
 date:   2021-10-26 06:50:00
 header:
   teaser: /assets/images/spring.png
@@ -11,7 +11,7 @@ tags:
   - Spring
   - JPA
   - DATA JPA
-  - @EntityGraph
+  - EntityGraph
 last_modified_at: 2021-10-26T06:50:00
 
 
