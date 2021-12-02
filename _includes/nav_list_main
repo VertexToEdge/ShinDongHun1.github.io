@@ -204,7 +204,7 @@
              <ul>
                             {% for category in site.categories %}
                                {% if category[0] == "oofm" %}
-                                  <li><a href="/categories/objectOriented" class="">객체지향의 사실과 오해</a></li>
+                                  <li><a href="/categories/oofm" class="">객체지향의 사실과 오해</a></li>
                               {% endif %}
                             {% endfor %}
                         </ul>
