@@ -202,9 +202,16 @@
 
            <span class="nav__sub-title">BOOK</span>
              <ul>
+                            {% for category in site.categories %}
+                               {% if category[0] == "oofm" %}
+                                  <li><a href="/categories/objectOriented" class="">객체지향의 사실과 오해</a></li>
+                              {% endif %}
+                            {% endfor %}
+                        </ul>
+             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "EssenceJAVA" %}
-                         <li><a href="/categories/EssenceJAVA" class="">자바의 정석({{category[1].size}})</a></li>
+                         <li><a href="/categories/EssenceJAVA" class="">자바의 정석</a></li>
                     {% endif %}
                {% endfor %}
               </ul>
@@ -212,7 +219,7 @@
               <ul>
                  {% for category in site.categories %}
                     {% if category[0] == "Object" %}
-                       <li><a href="/categories/Object" class="">오브젝트({{category[1].size}})</a></li>
+                       <li><a href="/categories/Object" class="">오브젝트</a></li>
                    {% endif %}
                  {% endfor %}
              </ul>
@@ -220,18 +227,12 @@
               <ul>
                  {% for category in site.categories %}
                     {% if category[0] == "CleanCode" %}
-                       <li><a href="/categories/CleanCode" class="">Clean Code({{category[1].size}})</a></li>
+                       <li><a href="/categories/CleanCode" class="">Clean Code</a></li>
                    {% endif %}
                  {% endfor %}
              </ul>
 
-              <ul>
-                 {% for category in site.categories %}
-                    {% if category[0] == "objectOriented" %}
-                       <li><a href="/categories/objectOriented" class="">객체지향의 사실과 오해({{category[1].size}})</a></li>
-                   {% endif %}
-                 {% endfor %}
-             </ul>
+
 
 
       </li>
