@@ -8,8 +8,6 @@ sidebar_main: true
 
 ---
 
-### ✏️스프링 JPA
-
 {% assign posts = site.categories.JPA%}
 {% for post in posts %} {% include archive-single.html type=page.entries_layout %} {% endfor %}
 
