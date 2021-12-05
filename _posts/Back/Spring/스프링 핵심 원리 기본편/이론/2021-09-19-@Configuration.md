@@ -1,5 +1,5 @@
 ---
-title:  "@Configuration"
+title:  "[Spring] @Configuration"
 excerpt: "@Configuration과 싱글톤"
 date:   2021-09-19 00:19:00 
 header:

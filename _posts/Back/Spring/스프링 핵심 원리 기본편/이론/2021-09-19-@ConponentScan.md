@@ -1,5 +1,5 @@
 ---
-title:  "@ComponentScan"
+title:  "[Spring] @ComponentScan"
 excerpt: "컴포넌트 스캔"
 date:   2021-09-19 08:58:00 +0900
 header:

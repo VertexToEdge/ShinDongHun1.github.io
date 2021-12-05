@@ -1,5 +1,5 @@
 ---
-title:  "IO Redirection"
+title:  "[Linux] IO Redirection"
 excerpt: "입출력에 대하여"
 date:   2021-12-03 07:40:00 
 header:

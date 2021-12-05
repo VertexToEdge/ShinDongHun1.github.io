@@ -1,5 +1,5 @@
 ---
-title:  "@Autowired"
+title:  "[Spring] @Autowired"
 excerpt: "의존관계 자동 주입"
 date:   2021-10-10 01:40:00 +0900
 header:
