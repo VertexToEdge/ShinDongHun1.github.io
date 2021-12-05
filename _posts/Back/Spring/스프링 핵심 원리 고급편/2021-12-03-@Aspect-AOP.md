@@ -87,39 +87,300 @@ AOP의 대표적인 구현으로 [AspectJ 프레임워크](https://www.eclipse.o
 
 - AOP 기능을 구현하기 위해 만든 프록시 객체, 스프링에서는 JDK 동적 프록시 또는 CGLIB 프록시이다.
 
- <br/>
-
- <br/>
-
-## @Aspect AOP
-
-스프링 애플리케이션에 프록시를 적용하려면 포인트컷과 어드바이스로 구성된 어드바이저를 만들어서 스프링 빈으로 등록해야 했다. 그러면 프록시 자동 생성기인 AnnotationAwareAspectJAutoProxyCreator가 모두 자동으로 처리해 주었다.
+<br/>
 
 <br/>
 
-##### 스프링은 @Aspect 애노테이션으로 매우 편리하게 포인트컷과 어드바이스로 구성되어 있는 어드바이저 생성 기능을 지원한다.
+## 사용
 
-<br/>
+#### 기본
 
 ```java
 @Slf4j
 @Aspect
-public class CustomAspect {
-	
-	@Around("execution(* hello.proxy.app..*(..))")//포인트컷
-	public Object execute(ProceedingJoinPoint joinPoint) throws Throwable{
-		//어드바이스 로직
-	}
+public class AspectV1 {
+
+    @Around("execution(* hello.aop.order..*(..))")
+    public Object doLog(ProceedingJoinPoint joinPoint) throws Throwable{
+        log.info("[log] {}",joinPoint.getSignature());
+        return joinPoint.proceed();
+    }
 }
+```
+
+- `@Around`에 들어있는 "execution(* hello.aop.order..*(..))"는 **포인트컷**이 된다
+- `@Around`의 메소드인 `doLog`는 **어드바이스**가 된다
+- 스프링 빈으로 등록하여야 적용이 된다!
+
+##### 참고) 스프링 빈을 등록하는 방법
+
+- `@Bean`사용
+- `@Component`사용
+- `@Import`사용
+
+<br/>
+
+<br/>
+
+#### 포인트컷 분리
+
+`@Around`에 포인트컷 표현식을 직접 넣을 수도 있지만, `@Pointcut`애노테이션을 사용해서 분리할 수 있다.
+
+```java
+@Slf4j
+@Aspect
+public class AspectV2 {
+
+    @Pointcut("execution(* hello.aop.order..*(..))")
+    private void allOrder(){};//pointcut signature
+
+    @Around("allOrder()")
+    public Object doLog(ProceedingJoinPoint joinPoint) throws Throwable{
+        log.info("[log] {}",joinPoint.getSignature());
+        return joinPoint.proceed();
+    }
+}
+
+```
+
+- `@Pointcut`메서드의 반환타입은 void 이어야 한다. 
+- 코드 내용은 비워둔다
+- 포인트컷 시그니처는allOrder()이다
+- 내부에서만 사용하면 private을 사용해도 되지만, 다른 애스펙트에서 참고하려면 public으로 지정해 주어야한다.
+
+<br/>
+
+<br/>
+
+#### 여러 어드바이스
+
+```java
+ @Slf4j
+@Aspect
+public class AspectV3 {
+
+    @Pointcut("execution(* hello.aop.order..*(..))")
+    private void allOrder(){};//pointcut signature
+
+    @Pointcut("execution(* *..*Service.*(..))")
+    private void allService(){};//pointcut signature
+
+    @Around("allOrder()")
+    public Object doLog(ProceedingJoinPoint joinPoint) throws Throwable{
+        log.info("[log] {}",joinPoint.getSignature());
+        return joinPoint.proceed();
+    }
+
+    @Around("allOrder() && allService()")
+    public Object doTransaction(ProceedingJoinPoint joinPoint) throws Throwable{
+        try {
+            log.info("[트랜잭션 시작] {}", joinPoint.getSignature());
+            Object result = joinPoint.proceed();
+            log.info("[트랜잭션 커밋] {}", joinPoint.getSignature());
+            return result;
+        } catch (Exception e) {
+            log.info("[트랜잭션 롤백] {}", joinPoint.getSignature());
+            throw e;
+        } finally {
+            log.info("[리소스 릴리즈] {}", joinPoint.getSignature());
+        }
+    }
+}
+```
+
+- `&&`, `||`, `!` 을 사용하여 포인트컷을 조합할 수 있다.
+
+<br/>
+
+<br/>
+
+#### 외부 포인트컷 사용
+
+```java
+public class Pointcuts {
+
+    @Pointcut("execution(* hello.aop.order..*(..))")
+    public void allOrder(){};
+
+    @Pointcut("execution(* *..*Service.*(..))")
+    public void allService(){};
+
+    @Pointcut("allOrder() && allService()")
+    public void orderAndService(){};
+}
+
+```
+
+
+
+```java
+@Slf4j
+@Aspect
+public class AspectV4 {
+
+    @Around("hello.aop.order.aop.Pointcuts.allOrder()")
+    public Object doLog(ProceedingJoinPoint joinPoint) throws Throwable{
+        log.info("[log] {}",joinPoint.getSignature());
+        return joinPoint.proceed();
+    }
+
+    @Around("hello.aop.order.aop.Pointcuts.orderAndService()")
+    public Object doTransaction(ProceedingJoinPoint joinPoint) throws Throwable{
+        try {
+            log.info("[트랜잭션 시작] {}", joinPoint.getSignature());
+            Object result = joinPoint.proceed();
+            log.info("[트랜잭션 커밋] {}", joinPoint.getSignature());
+            return result;
+        } catch (Exception e) {
+            log.info("[트랜잭션 롤백] {}", joinPoint.getSignature());
+            throw e;
+        } finally {
+            log.info("[리소스 릴리즈] {}", joinPoint.getSignature());
+        }
+    }
+}
+
 ```
 
 <br/>
 
 <br/>
 
-### 자동 프록시 생성기의 역할 
+#### 어드바이스 순서
 
-##### AnnotationAwareAspectJAutoProxyCreator은 두 가지 역할을 한다.
+어드바이스는 기본적으로 순서를 보장하지 않는다. 순서를 지정하고 싶으면 `@Aspect `적용 단위로
+
+`org.springframework.core.annotation.@Order` 애노테이션을 적용해야 한다.
+
+##### 문제는 이것은 클래스 단위로 적용된다.
+
+그래서 하나의 애스펙트에 여러 어드바이스가 있으면 순서를 보장받을 수 없다. 따라서 **애스펙트를 별도의 클래스로 분리**해야 한다.
+
+```java
+@Slf4j
+public class AspectV5Order {
+    @Aspect
+    @Order(2)
+    public static class LogAspect {
+        @Around("hello.aop.order.aop.Pointcuts.allOrder()")
+        public Object doLog(ProceedingJoinPoint joinPoint) throws Throwable {
+            log.info("[log] {}", joinPoint.getSignature());
+            return joinPoint.proceed();
+        }
+    }
+    
+    @Aspect
+    @Order(1)
+    public static class TxAspect {
+        @Around("hello.aop.order.aop.Pointcuts.orderAndService()")
+        public Object doTransaction(ProceedingJoinPoint joinPoint) throws
+                Throwable {
+            try {
+                log.info("[트랜잭션 시작] {}", joinPoint.getSignature());
+                Object result = joinPoint.proceed();
+                log.info("[트랜잭션 커밋] {}", joinPoint.getSignature());
+                return result;
+            } catch (Exception e) {
+                log.info("[트랜잭션 롤백] {}", joinPoint.getSignature());
+                throw e;
+            } finally {
+                log.info("[리소스 릴리즈] {}", joinPoint.getSignature());
+            }
+        }
+    }
+}
+```
+
+- LogAspect 와 TxAspect 모두 스프링 빈으로 등록해 주어야 한다.
+
+<br/>
+
+<br/>
+
+## 어드바이스 종류
+
+- `@Around` : 메소드 호출 전후에 실행, 가장 강력한 어드바이스
+- `@Before ` : 조인포인트 실행 이전에 실행
+- `@After Returning` : 조인포인트가 정상 완료된 후 실행
+- `@After Throwing` : 메서드가 예외를 던지는 경우 실행
+- `@After` : 조인 포인트가 정상 또는 예외에 관계없이 실행(finally)
+
+```java
+@Slf4j
+@Aspect
+public class AspectV6Advice {
+    @Around("hello.aop.order.aop.Pointcuts.orderAndService()")
+    public Object doTransaction(ProceedingJoinPoint joinPoint) throws Throwable
+    {
+        try {
+//@Before
+            log.info("[around][트랜잭션 시작] {}", joinPoint.getSignature());
+            Object result = joinPoint.proceed();
+//@AfterReturning
+            log.info("[around][트랜잭션 커밋] {}", joinPoint.getSignature());
+            return result;
+        } catch (Exception e) {
+//@AfterThrowing
+            log.info("[around][트랜잭션 롤백] {}", joinPoint.getSignature());
+            throw e;
+        } finally {
+//@After
+            log.info("[around][리소스 릴리즈] {}", joinPoint.getSignature());
+        }
+    }
+    @Before("hello.aop.order.aop.Pointcuts.orderAndService()")
+    public void doBefore(JoinPoint joinPoint) {
+        log.info("[before] {}", joinPoint.getSignature());
+    }
+    @AfterReturning(value = "hello.aop.order.aop.Pointcuts.orderAndService()",
+            returning = "result")
+    public void doReturn(JoinPoint joinPoint, Object result) {
+        log.info("[return] {} return={}", joinPoint.getSignature(), result);
+    }
+    @AfterThrowing(value = "hello.aop.order.aop.Pointcuts.orderAndService()",
+            throwing = "ex")
+    public void doThrowing(JoinPoint joinPoint, Exception ex) {
+        log.info("[ex] {} message={}", joinPoint.getSignature(),
+                ex.getMessage());
+    }
+    @After(value = "hello.aop.order.aop.Pointcuts.orderAndService()")
+    public void doAfter(JoinPoint joinPoint) {
+        log.info("[after] {}", joinPoint.getSignature());
+    }
+}
+```
+
+
+
+#### 참고
+
+모든 어드바이스는 `org.aspectj.lang.JoinPoint` 를 첫번째 파라미터에 사용할 수 있다. (생략해도
+된다.)
+단 `@Around` 는 `ProceedingJoinPoint` 을 사용해야 한다.
+
+`ProceedingJoinPoint` 에는 proceed() 기능이 있어서 다음 어드바이스나 타겟을 호출할 수 있다.
+
+##### JoinPoint 인터페이스의 주요 기능
+
+- getArgs() : 메서드 인수를 반환합니다.
+- getThis() : 프록시 객체를 반환합니다.
+- getTarget() : 대상 객체를 반환합니다.
+- getSignature() : 조언되는 메서드에 대한 설명을 반환합니다.
+- toString() : 조언되는 방법에 대한 유용한 설명을 인쇄합니다.
+
+##### ProceedingJoinPoint 인터페이스의 주요 기능
+
+- proceed() : 다음 어드바이스나 타켓을 호출한다.
+
+<br/>
+
+<br/>
+
+## 참고
+
+#### 자동 프록시 생성기의 역할 
+
+**AnnotationAwareAspectJAutoProxyCreator**은 두 가지 역할을 한다.
 
 1. @Aspect를 보고 어드바이저로 변환해서 저장한다(@Aspect 어드바이저 빌더를 통해 생성한다.)
 2. 어드바이저를 기반으로 프록시를 생성한다
@@ -128,7 +389,7 @@ public class CustomAspect {
 
 #### @Aspect 어드바이저 빌더
 
-##### BeanFactoryAspectJAdvisorBuilder 클래스이다. @Aspect의 정보를 기반으로 포인트컷, 어드바이스, 어드바이저를 생성하고 보관하는 것을 담당한다.
+**BeanFactoryAspectJAdvisorBuilder** 클래스이다. @Aspect의 정보를 기반으로 포인트컷, 어드바이스, 어드바이저를 생성하고 보관하는 것을 담당한다.
 
 <br/>
 
