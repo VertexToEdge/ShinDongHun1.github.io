@@ -56,7 +56,7 @@ rm rename2.txt 를 실행하였을 때, 오류가 발생하지 않고 정상 처
 
 ### \>>
 
-> ex : ls -al >> result.txt
+> ex : ls -al \>\> result.txt
 
 <br/>
 
@@ -68,7 +68,7 @@ rm rename2.txt 를 실행하였을 때, 오류가 발생하지 않고 정상 처
 
 위에서 입력한 문자가 다시 나올 때까지 작성한 모든 내용을 입력 값으로 전달한다.
 
-> ex: mail huipulci1@naver.com <<**eot**
+> ex: mail huipulci1@naver.com\<\<**eot**
 >
 > hi
 >
