@@ -35,3 +35,6 @@ Gemfile.lock
 node_modules
 npm-debug.log*
 cmd.sh
+
+
+sitemap.xml
